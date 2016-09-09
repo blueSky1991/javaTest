@@ -18,6 +18,21 @@ public class MyWindow {
 		
 		frame.addWindowListener(mListener);
 		
+		
+//		 Button button = new Button("退出");
+//		 button.addActionListener(new ActionListener() {
+//			
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				// TODO Auto-generated method stub
+//				
+//				frame.setVisible(false);
+//				 
+//			}
+//		});
+//		 
+//		frame.add(button) ;
+		
 
 	}
 	
@@ -29,13 +44,13 @@ class MyWindowListener implements WindowListener{
 	@Override
 	public void windowOpened(WindowEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("windowOpened");
+		System.out.println("windowOpened  窗口打开");
 	}
 
 	@Override
 	public void windowClosing(WindowEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("windowClosing");
+		System.out.println("windowClosing  窗口将要关闭 ");
 		Window window = e.getWindow();//得到正在显示的窗体
 		window.setVisible(false); // 设置窗体不可见
         window.dispose();// 释放窗口		
@@ -44,33 +59,33 @@ class MyWindowListener implements WindowListener{
 	@Override
 	public void windowClosed(WindowEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("windowClosed");
+		System.out.println("windowClosed  窗口已经关闭 ");
 		
 	}
 
 	@Override
 	public void windowIconified(WindowEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("windowIconified");
+		System.out.println("windowIconified 窗口图标化 ");
 	}
 
 	@Override
 	public void windowDeiconified(WindowEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("windowDeiconified");
+		System.out.println("windowDeiconified 窗口取消图标化  ");
 	}
 
 	@Override
 	public void windowActivated(WindowEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("windowActivated");
+		System.out.println("windowActivated   窗口活跃状态");
 		
 	}
 
 	@Override
 	public void windowDeactivated(WindowEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("windowDeactivated");
+		System.out.println("windowDeactivated  窗口非活跃状态");
 	}
 	
 	
