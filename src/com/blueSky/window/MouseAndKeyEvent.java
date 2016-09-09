@@ -15,9 +15,60 @@ public class MouseAndKeyEvent {
 		frame.setSize(400, 300);// 窗体的尺寸
 		frame.setLocation(300, 200);//窗体的在父视图上显示的位置
 		button = new Button("请点击这里");
-		textField = new TextField("请输入文字");
+		textField = new TextField(50);
+		textField.setEchoChar('a'); 
 		frame.add(button);
 		frame.add(textField);
+		
+		frame.addWindowListener(new WindowListener() {
+			
+			@Override
+			public void windowClosing(WindowEvent e) {
+				// TODO Auto-generated method stub
+				frame.setVisible(false);
+			   Window window = e.getWindow();
+			   window.dispose();
+                 				
+			}
+
+			@Override
+			public void windowOpened(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void windowClosed(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void windowIconified(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void windowDeiconified(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void windowActivated(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void windowDeactivated(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		
 		textField.addKeyListener(new KeyListener() {
 			
 			@Override
