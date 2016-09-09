@@ -26,7 +26,7 @@ public class MyWindow {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(" 按钮被点击 窗口即将关闭");
+//				System.out.println(" 按钮被点击 窗口即将关闭");
 				// TODO Auto-generated method stub
 				System.exit(0);
 			}
@@ -49,7 +49,7 @@ public class MyWindow {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				System.out.println(" 打开按钮被点击 窗口即将打开");
+//				System.out.println(" 打开按钮被点击 窗口即将打开");
 				MouseAndKeyEvent event = new MouseAndKeyEvent();
 				event.mouseEvent();
 				
@@ -69,48 +69,49 @@ class MyWindowListener implements WindowListener{
 	@Override
 	public void windowOpened(WindowEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("windowOpened  窗口打开");
+//		System.out.println("windowOpened  窗口打开");
 	}
 
 	@Override
 	public void windowClosing(WindowEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println(" windowClosing  窗口将要关闭 ");
-		Window window = e.getWindow();//得到正在显示的窗体
-		window.setVisible(false); // 设置窗体不可见
-        window.dispose();// 释放窗口		
+//		System.out.println(" windowClosing  窗口将要关闭 ");
+//		Window window = e.getWindow();//得到正在显示的窗体
+//		window.setVisible(false); // 设置窗体不可见
+//        window.dispose();// 释放窗口
+        System.exit(0);
 	}
 
 	@Override
 	public void windowClosed(WindowEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("windowClosed  窗口已经关闭 ");
+//		System.out.println("windowClosed  窗口已经关闭 ");
 		
 	}
 
 	@Override
 	public void windowIconified(WindowEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("windowIconified 窗口图标化 ");
+//		System.out.println("windowIconified 窗口图标化 ");
 	}
 
 	@Override
 	public void windowDeiconified(WindowEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("windowDeiconified 窗口取消图标化  ");
+//		System.out.println("windowDeiconified 窗口取消图标化  ");
 	}
 
 	@Override
 	public void windowActivated(WindowEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("windowActivated   窗口活跃状态");
+//		System.out.println("windowActivated   窗口活跃状态");
 		
 	}
 
 	@Override
 	public void windowDeactivated(WindowEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("windowDeactivated  窗口非活跃状态");
+//		System.out.println("windowDeactivated  窗口非活跃状态");
 	}
 	
 	
