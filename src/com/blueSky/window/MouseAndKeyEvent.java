@@ -5,16 +5,42 @@ import java.awt.event.*;
 
 public class MouseAndKeyEvent {
 	
+	Frame frame ;
+	Button button;
+	Button keyBtn;//处理键盘接收的事件
+	TextField textField;
+	
 	public void mouseEvent(){
-		Frame frame = new Frame("测试鼠标的点击");//建立窗体对象
+		frame = new Frame("鼠标键盘事件的接收和处理");//建立窗体对象
 		frame.setSize(400, 300);// 窗体的尺寸
 		frame.setLocation(300, 200);//窗体的在父视图上显示的位置
-		Button button = new Button("请点击这里");
+		button = new Button("请点击这里");
+		textField = new TextField("请输入文字");
 		frame.add(button);
+		frame.add(textField);
+		textField.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				char ch = e.getKeyChar();
+				System.out.println("键入"+ch);
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("释放某个键时调用此方法");
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+			//	按下某个键时调用此方法。
+				System.out.println("按下某个键时调用此方法。");
+			}
+		});
 		frame.setLayout(new FlowLayout());
-		
-		
-		
 		button.addMouseListener(new MouseListener() {
 			
 			@Override
@@ -50,10 +76,9 @@ public class MouseAndKeyEvent {
 				
 			}
 		});
-		
-		
         frame.setVisible(true);
 	    	   
 	}
+			
 	
 }
