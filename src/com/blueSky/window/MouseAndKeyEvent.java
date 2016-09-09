@@ -7,7 +7,7 @@ public class MouseAndKeyEvent {
 	
 	Frame frame ;
 	Button button;
-	Button keyBtn;//处理键盘接收的事件
+	
 	TextField textField;
 	
 	public void mouseEvent(){

@@ -1,8 +1,9 @@
 package com.blueSky.window;
 
-
 import java.awt.*;
 import java.awt.event.*;
+
+import com.blueSky.file.TransDir;
 
 // 建立我的第一个窗口
 public class MyWindow {
@@ -14,8 +15,10 @@ public class MyWindow {
 		frame.setLocation(300, 200);//窗体的在父视图上显示的位置
 		Button button = new Button("退出");
 		Button openBtn = new Button("打开");
+		Button transBtn = new Button("目录");
 		frame.add(button);
 		frame.add(openBtn);
+		frame.add(transBtn);
 		frame.setLayout(new FlowLayout());
         MyWindowListener mListener = new MyWindowListener();
 		frame.addWindowListener(mListener);
@@ -26,6 +29,18 @@ public class MyWindow {
 				System.out.println(" 按钮被点击 窗口即将关闭");
 				// TODO Auto-generated method stub
 				System.exit(0);
+			}
+		});
+		
+		
+		transBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				TransDir dir = new TransDir();
+				dir.searchDir();
+				
 			}
 		});
 		
