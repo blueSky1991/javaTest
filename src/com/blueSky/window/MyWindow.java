@@ -13,7 +13,9 @@ public class MyWindow {
 		frame.setSize(400, 300);// 窗体的尺寸
 		frame.setLocation(300, 200);//窗体的在父视图上显示的位置
 		Button button = new Button("退出");
+		Button openBtn = new Button("打开");
 		frame.add(button);
+		frame.add(openBtn);
 		frame.setLayout(new FlowLayout());
         MyWindowListener mListener = new MyWindowListener();
 		frame.addWindowListener(mListener);
@@ -27,25 +29,21 @@ public class MyWindow {
 			}
 		});
 		
+		openBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println(" 打开按钮被点击 窗口即将打开");
+				MouseAndKeyEvent event = new MouseAndKeyEvent();
+				event.mouseEvent();
+				
+			}
+		});
+		
+		
 		frame.setVisible(true);//设置窗体可见
 		
-		//		
-		
-//		 Button button = new Button("退出");
-//		 button.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				// TODO Auto-generated method stub
-//				
-//				frame.setVisible(false);
-//				 
-//			}
-//		});
-//		 
-//		frame.add(button) ;
-		
-
 	}
 	
 	//
