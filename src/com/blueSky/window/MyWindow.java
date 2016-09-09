@@ -12,12 +12,24 @@ public class MyWindow {
 		Frame frame = new Frame("我的窗口");//建立窗体对象
 		frame.setSize(400, 300);// 窗体的尺寸
 		frame.setLocation(300, 200);//窗体的在父视图上显示的位置
+		Button button = new Button("退出");
+		frame.add(button);
+		frame.setLayout(new FlowLayout());
+        MyWindowListener mListener = new MyWindowListener();
+		frame.addWindowListener(mListener);
+		button.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println(" 按钮被点击 窗口即将关闭");
+				// TODO Auto-generated method stub
+				System.exit(0);
+			}
+		});
+		
 		frame.setVisible(true);//设置窗体可见
 		
-		MyWindowListener mListener = new MyWindowListener();
-		
-		frame.addWindowListener(mListener);
-		
+		//		
 		
 //		 Button button = new Button("退出");
 //		 button.addActionListener(new ActionListener() {
@@ -50,7 +62,7 @@ class MyWindowListener implements WindowListener{
 	@Override
 	public void windowClosing(WindowEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("windowClosing  窗口将要关闭 ");
+		System.out.println(" windowClosing  窗口将要关闭 ");
 		Window window = e.getWindow();//得到正在显示的窗体
 		window.setVisible(false); // 设置窗体不可见
         window.dispose();// 释放窗口		
