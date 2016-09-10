@@ -8,9 +8,14 @@ import com.blueSky.file.TransDir;
 // 建立我的第一个窗口
 public class MyWindow {
 
+	private static Menu menu,submenu;
+	private  static MenuBar menuBar;
+	private  static MenuItem menuItem,submenuItem;
+	private static Frame frame;
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Frame frame = new Frame("我的窗口");//建立窗体对象
+	    frame = new Frame("我的窗口");//建立窗体对象
 		frame.setSize(400, 300);// 窗体的尺寸
 		frame.setLocation(300, 200);//窗体的在父视图上显示的位置
 		Button button = new Button("退出");
@@ -20,6 +25,9 @@ public class MyWindow {
 		frame.add(openBtn);
 		frame.add(transBtn);
 		frame.setLayout(new FlowLayout());
+		 
+	    addMenu();
+		
         MyWindowListener mListener = new MyWindowListener();
 		frame.addWindowListener(mListener);
 		button.addActionListener(new ActionListener() {
@@ -60,6 +68,29 @@ public class MyWindow {
 		frame.setVisible(true);//设置窗体可见
 		
 	}
+	
+	
+	// 添加菜单到任务栏上
+		private static void addMenu(){
+
+		menuBar = new MenuBar();
+		menu = new Menu("文件");
+		submenu = new Menu("打开");
+		menuItem = new MenuItem("下一集");
+		submenuItem = new MenuItem("第二级");
+		
+		menuBar.add(menu);
+		menuBar.add(submenu);
+		
+		menu.add(menuItem);
+        submenu.add(submenuItem);
+		
+		frame.setMenuBar(menuBar);
+//		frame.add("开始", menuBar);
+		
+		
+			
+		}
 	
 	//
 }
@@ -113,6 +144,7 @@ class MyWindowListener implements WindowListener{
 		// TODO Auto-generated method stub
 //		System.out.println("windowDeactivated  窗口非活跃状态");
 	}
+	
 	
 	
 	

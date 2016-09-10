@@ -124,7 +124,7 @@ public class TransDir {
 	
 	private void showText(){
 
-//		textField.setText("");
+		textField.setText("");
 		String string = textField.getText();				
 		File file = new File(string);
 //		System.out.println(file);
